@@ -123,3 +123,22 @@ si la partie est gagnée, notre temps est sauvegardé en base de données
 En dessous du plateau de jeu on a le timer
  - un compteur numérique qui décompte à partir de 300 secondes
  - une barre de progression qui passe du vert au rouge en 300 secondes
+
+
+## Captures d'écran
+Écran de démarrage
+![Capture d’écran du 2021-08-15 18-24-19](https://user-images.githubusercontent.com/88975421/129485461-301395e5-1ec7-46d4-a86a-6c010eba6145.png)
+
+Le plateau de jeu, cartes retournées
+![Capture d’écran du 2021-08-15 18-24-56](https://user-images.githubusercontent.com/88975421/129485466-d2fc86aa-d0ca-43de-9c9c-6b603ca4aa2d.png)
+
+Partie en cours
+![Capture d’écran du 2021-08-15 18-25-15](https://user-images.githubusercontent.com/88975421/129485471-c470429b-d7c4-4ed8-9bdc-92bd0440f5a0.png)
+
+Le joueur a gagné !
+![Capture d’écran du 2021-08-15 18-27-26](https://user-images.githubusercontent.com/88975421/129485477-4cecefee-71ae-4899-b5bc-3e2fa6bf6551.png)
+
+Le nouveau temps est ajouté sur l'écran de démarrage
+![Capture d’écran du 2021-08-15 18-27-41](https://user-images.githubusercontent.com/88975421/129485490-01c9b894-3421-4571-8d45-6c56b9952702.png)
+
+
