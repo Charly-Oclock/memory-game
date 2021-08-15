@@ -12,7 +12,60 @@ Le code est commenté à l'excès dans un but pédagogique.
 Assurez-vous d’avoir Node, NPM, et MySQL d’installés au préalable.
 
 
-On commence par cloner le projet:
+### Base de données
+
+#### Introduction
+Une base de données ou database en anglais (que nous nommerons BDD par commodité), est une collection d’informations organisées afin d’être facilement consultables, gérables et mises à jour. Au sein d’une database, les données sont organisées en lignes, colonnes et tableaux. Elles sont indexées afin de pouvoir facilement trouver les informations recherchées à l’aide d’un logiciel informatique. Chaque fois que de nouvelles informations sont ajoutées, les données sont mises à jour, et éventuellement supprimées.
+
+Imaginons un annuaire téléphonique qui représenterait un tableau (ou un table).
+Nous avons des colonnes qui correspondent aux clés des informations: numéro, nom, prénom, adresse, ville, code postale, etc...
+Puis nous avons les lignes, qui contiennent les valeurs pour chacunes des colonnes: 01000000, Perceval, DE GALLES, La Taverne, Pays de Logres, 12345
+
+Pour se projet, nous allons faire simple puisque nous souhaitons simplement stocker des chiffres correspondants a des temps de jeu en secondes.
+
+#### Installation
+On lance MySQL dans un terminal:
+`$mysql -u username -p`
+Il faudra ensuite saisir votre mot de passe d'utilisateur MySQL
+`Enter password: `
+Une fois connecter avec le terminal `mysql>` on peut commencer a créer la base de données
+
+`mysql> CREATE DATABASE memoryGame;`
+On doit ensuite se placer sur cette BDD:
+`mysql> use memoryGame;`
+
+Ensuite on ajoute une table pour les temps que nous allons appeler "times", avec une premiere colonne "time" correspondant a la valeur des temps de jeu en secondes:
+`mysql> CREATE TABLE times (time INT);`
+
+Ensuite nous allons ajouter plusieurs colonnes qu'on utilise généralement dans tous les systemes de bases de données: "id" correspondant a un identifiant unique, "createdAt" correspondant a la date de création d'un nouveau temps, et "updatedAt" correspondant a la date de derniere modification.
+
+A noter que pour ce projet, ces colonnes n'auront aucune importance car nous ne traitons pas encore ces informations.
+
+`mysql> ALTER TABLE times ADD `ID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+
+Ici on indique que l'ID ne doit jamais etre nul, et qu'il soit automatiquement s'incrémenter de 1 en 1 a chaque nouvelle ligne ajoutée dans ma table.
+
+`mysql> ALTER TABLE times ADD COLUMN createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP;`
+Puis
+`mysql> ALTER TABLE times ADD COLUMN updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;`
+
+Vous pouvez vérifier que les colonnes sont bien présentent en tapant:
+`mysql> SHOW COLUMNS FROM times;`
+Ce qui devrait donner:
+```
++-----------+-----------+------+-----+-------------------+-----------------------------------------------+
+| Field     | Type      | Null | Key | Default           | Extra                                         |
++-----------+-----------+------+-----+-------------------+-----------------------------------------------+
+| id        | int       | NO   | PRI | NULL              | auto_increment                                |
+| time      | int       | YES  |     | NULL              |                                               |
+| createdAt | timestamp | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
+| updatedAt | datetime  | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++-----------+-----------+------+-----+-------------------+-----------------------------------------------+
+
+```
+
+### Installation du projet
+On ensuite on peut cloner le projet:
 
 `$cd {dossier de votre choix} && git clone https://github.com/Charly-Oclock/memory-game.git`
 
