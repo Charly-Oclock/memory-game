@@ -14,15 +14,19 @@ Assurez-vous d’avoir Node, NPM, et MySQL d’installés au préalable.
 
 On commence par cloner le projet:
 
-`$cd {dossier de votre choix}`
-`$git clone https://github.com/Charly-Oclock/memory-game.git`
+`$cd {dossier de votre choix} && git clone https://github.com/Charly-Oclock/memory-game.git`
+
+`$cd memory-game`
 
 Ensuite on installe les dépendances
 `$npm install`
 
-
 Maintenant, on peut lancer l’application avec
 `$npm start`
+
+Le message `Listening on port 3000...` doit apparaitre en console.
+
+Attention, si vous avez une erreur, il faut vérifier que le port 3000 est disponible. Sinon vous pouvez mettre le port que vous souhaitez en modifiant dans le fichier index.js
 
 A noter qu’on utilise nodemon qui permet de ne plus avoir à relancer le serveur manuellement après chaque modification de fichier.
 
