@@ -1,0 +1,29 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "package for the memory-game application",
+  "scripts": {
+    "start": "sass ./css/style.scss ./css/style.css && nodemon index.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luinilbleue/memory-game.git"
+  },
+  "author": "Charly Morand",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Luinilbleue/memory-game/issues"
+  },
+  "homepage": "https://github.com/Luinilbleue/memory-game#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.0",
+    "sass": "^1.37.5",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

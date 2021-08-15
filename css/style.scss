@@ -1,0 +1,156 @@
+
+/*******************************/
+/************GENERAL************/
+/*******************************/
+
+body{
+  background-color: #123456;
+}
+
+
+/*******************************/
+/**********MEMORY GAME**********/
+/*******************************/
+
+.memory{
+  margin: auto;
+  width: 50vw;
+  height: 70vh;
+  border: 2px solid white;
+  margin: 5em, 2em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+  box-sizing: border-box;
+  margin: 0.5em;
+  height: 100px;
+  width: 100px;
+  padding: 0.5rem;
+  font-size: 2em;
+  &-hidden{
+    background-color: grey;
+    border: 5px solid white;
+    img{
+      display: none;
+    }
+  }
+  &-first{
+    border: 2px solid orange
+  }
+  &-wrong{
+    border: 2px solid red
+  }
+  &-match{
+    border: 2px solid green
+  }
+  img{
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
+}
+
+
+
+/*******************************/
+/************TIMERS*************/
+/*******************************/
+
+.timer{
+  width: 80vw;
+  height: 20vh;
+  margin: 2em auto;
+  text-align: center;
+  border: 3px solid grey;
+  border-radius: 30px;
+}
+
+
+.progressbar {
+  width: 80%;
+  margin: 25px auto;
+  border: solid 1px #000;
+}
+
+.timer-count {
+  width: auto;
+  margin: auto;
+  color: white;
+  font-size: 3em;
+  display: block;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 0.3em;
+}
+
+.animated-bar {
+  height: 15px;
+  animation: progressbar-animation;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes progressbar-animation {
+  0% {
+    width: 100%;
+    background: #0F0;
+  }
+  100% {
+    width: 0%;
+    background: #F00;
+  }
+}
+
+
+/*******************************/
+/************BUTTONS************/
+/*******************************/
+
+.button{
+  margin: 0.5em auto;
+  border: 3px solid grey;
+  border-radius: 30px;
+  color: white;
+  font-size: 3em;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 0.3em;
+}
+
+.button:hover{
+  border: 3px solid white;
+}
+
+
+/*******************************/
+/*************MODAL*************/
+/*******************************/
+
+#modal {
+  text-align: center;
+  margin: auto;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+.modal-content {
+  color: #fefefe;
+  list-style:none;
+  font-size: 2em;
+  font-weight: 900;
+  margin: 5em auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+}
