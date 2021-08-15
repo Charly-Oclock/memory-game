@@ -25,33 +25,45 @@ Pour se projet, nous allons faire simple puisque nous souhaitons simplement stoc
 
 #### Installation
 On lance MySQL dans un terminal:
+
 `$mysql -u username -p`
+
 Il faudra ensuite saisir votre mot de passe d'utilisateur MySQL
+
 `Enter password: `
-Une fois connecter avec le terminal `mysql>` on peut commencer a créer la base de données
+
+Une fois connecté avec le terminal `mysql>` on peut commencer a créer la base de données
 
 `mysql> CREATE DATABASE memoryGame;`
-On doit ensuite se placer sur cette BDD:
+
+Puis on doit se placer sur cette BDD:
+
 `mysql> use memoryGame;`
 
 Ensuite on ajoute une table pour les temps que nous allons appeler "times", avec une premiere colonne "time" correspondant a la valeur des temps de jeu en secondes:
+
 `mysql> CREATE TABLE times (time INT);`
 
 Ensuite nous allons ajouter plusieurs colonnes qu'on utilise généralement dans tous les systemes de bases de données: "id" correspondant a un identifiant unique, "createdAt" correspondant a la date de création d'un nouveau temps, et "updatedAt" correspondant a la date de derniere modification.
 
 A noter que pour ce projet, ces colonnes n'auront aucune importance car nous ne traitons pas encore ces informations.
 
-`mysql> ALTER TABLE times ADD `ID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+``mysql> ALTER TABLE times ADD `ID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;``
 
 Ici on indique que l'ID ne doit jamais etre nul, et qu'il soit automatiquement s'incrémenter de 1 en 1 a chaque nouvelle ligne ajoutée dans ma table.
 
 `mysql> ALTER TABLE times ADD COLUMN createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP;`
+
 Puis
+
 `mysql> ALTER TABLE times ADD COLUMN updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;`
 
 Vous pouvez vérifier que les colonnes sont bien présentent en tapant:
+
 `mysql> SHOW COLUMNS FROM times;`
+
 Ce qui devrait donner:
+
 ```
 +-----------+-----------+------+-----+-------------------+-----------------------------------------------+
 | Field     | Type      | Null | Key | Default           | Extra                                         |
