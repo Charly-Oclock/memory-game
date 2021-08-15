@@ -40,8 +40,8 @@ A noter qu’on utilise nodemon qui permet de ne plus avoir à relancer le serve
  - cliquer sur une carte va la retourner, affichant ainsi l’image
  - cliquer sur une seconde carte va la retourner, afficher l’image
  - quand on clique sur la seconde carte, on a 1 seconde pour voir l’image qui correspond. On a donc 2 possibilités:
-- les cartes correspondent => les 2 cartes restent retournées et ne sont plus cliquables
-- les cartes ne correspondent pas => on a donc 1 secondes pour les observer avant qu’elles ne se retournent faces cachées
+   - les cartes correspondent => les 2 cartes restent retournées et ne sont plus cliquables
+   - les cartes ne correspondent pas => on a donc 1 secondes pour les observer avant qu’elles ne se retournent faces cachées
 
 - on a 5 minutes, 300 secondes pour trouver toutes les paires de cartes
 - on perd la partie si le timer se termine avant que toutes les paires ne soient visibles
