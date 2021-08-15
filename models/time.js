@@ -10,7 +10,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER
     }
   });
-  
+
   //et on retourne notre objet
   return Time;
 };

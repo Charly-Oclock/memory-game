@@ -8,7 +8,7 @@ exports.create = (req, res) => {
   if (!req.body.time) {
     //si time n'est pas renseigné, on renvoie une erreur
     res.status(400).send({
-      message: "Content can not be empty!"
+      message: "Le temps n'a pas été renseigné!"
     });
     return;
   }
